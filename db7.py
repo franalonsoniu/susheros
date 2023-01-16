@@ -16,7 +16,6 @@ st.set_page_config(page_title="Producción Susheros", page_icon=":sushi:",layout
 image = Image.open("foto.png")
 
 t1, t3, t4, t5  = st.columns((3,4,2,1))
-# t3.title("Producción Susheros :bento:")
 t5.image("foto.png")
 
 hide_img_fs = '''
@@ -384,135 +383,6 @@ for i in range(0, len(tb1)):
         fig.update_layout(yaxis_tickprefix = '$', yaxis_tickformat = ',.')
         st.plotly_chart(fig, config=config)
 
-########################################### Calendario ################################################
-
-#     calendar.setfirstweekday(0)
-#     w_days = 'Lun Mar Mie Jue Vie Sab Dom'.split()
-#
-# # ----------------------------------------------------------------------------------------------------
-#     class MplCalendar(object):
-#         def __init__(self, year, month):
-#             self.year = year
-#             self.month = month
-#             self.cal = calendar.monthcalendar(year, month)
-#             self.events = [[[] for day in week] for week in self.cal]
-#
-#         def _monthday_to_index(self, day):
-#             for week_n, week in enumerate(self.cal):
-#                 try:
-#                     i = week.index(day)
-#                     return week_n, i
-#                 except ValueError:
-#                     pass
-#             raise ValueError("There aren't {} days in the month".format(day))
-#
-#         def add_event(self, day, event_str):
-#             week, w_day = self._monthday_to_index(day)
-#             self.events[week][w_day].append(event_str)
-#
-#         def show(self):
-#             f, axs = plt.subplots(len(self.cal), 7, sharex=True, sharey=True, figsize=(7,3))
-#             for week, ax_row in enumerate(axs):
-#                 for week_day, ax in enumerate(ax_row):
-#                     ax.set_xticks([])
-#                     ax.set_yticks([])
-#                     if self.cal[week][week_day] != 0:
-#                         ax.text(.02, .98,
-#                                 str(self.cal[week][week_day]),
-#                                 verticalalignment='top',
-#                                 horizontalalignment='left')
-#                     contents = "\n".join(self.events[week][week_day])
-#                     ax.text(.03, .85, contents,
-#                             verticalalignment='top',
-#                             horizontalalignment='left',
-#                             fontsize=9)
-#
-#             for n, day in enumerate(w_days):
-#                 axs[0][n].set_title(day)
-#
-#             f.subplots_adjust(hspace=0)
-#             f.subplots_adjust(wspace=0)
-#             col2.pyplot(f)
-#
-# # ----------------------------------------------------------------------------------------------------
-#
-#     class MklCalendar(object):
-#         def __init__(self, year, month):
-#             self.year = year
-#             self.month = month
-#             self.cal = calendar.monthcalendar(year, month)
-#             self.events = [[[] for day in week] for week in self.cal]
-#
-#         def _monthday_to_index(self, day):
-#             for week_n, week in enumerate(self.cal):
-#                 try:
-#                     i = week.index(day)
-#                     return week_n, i
-#                 except ValueError:
-#                     pass
-#             raise ValueError("There aren't {} days in the month".format(day))
-#
-#         def add_event(self, day, event_str):
-#             week, w_day = self._monthday_to_index(day)
-#             self.events[week][w_day].append(event_str)
-#
-#         def show(self):
-#             f, axs = plt.subplots(len(self.cal), 7, sharex=True, sharey=True, figsize=(7,3))
-#             for week, ax_row in enumerate(axs):
-#                 for week_day, ax in enumerate(ax_row):
-#                     ax.set_xticks([])
-#                     ax.set_yticks([])
-#                     if self.cal[week][week_day] != 0:
-#                         ax.text(.02, .98,
-#                                 str(self.cal[week][week_day]),
-#                                 verticalalignment='top',
-#                                 horizontalalignment='left')
-#                     contents = "\n".join(self.events[week][week_day])
-#                     ax.text(.03, .85, contents,
-#                             verticalalignment='top',
-#                             horizontalalignment='left',
-#                             fontsize=9)
-#
-#             f.subplots_adjust(hspace=0)
-#             f.subplots_adjust(wspace=0)
-#             col2.pyplot(f)
-#
-# # ----------------------------------------------------------------------------------------------------
-#
-#     año = des['Repeat'].unique()
-#
-#     if len(año) == 1:
-#         fff = des[(des.Repeat == año[0])]
-#         fecha = MplCalendar(int(fff['year'].unique()),int(fff['mes'].unique()))
-#         for i in range(len(fff)):
-#             fecha.add_event(int(fff.loc[i,'day']), '')
-#             fecha.add_event(int(fff.loc[i,'day']),'  '+str(fff.loc[i,'Monto']))
-#             fecha.add_event(int(fff.loc[i,'day']), '')
-#         fecha.show()
-#
-#     elif len(año) == 2:
-#         fff = des[(des.Repeat == año[0])]
-#         fecha = MplCalendar(int(fff['year'].unique()),int(fff['mes'].unique()))
-#         for i in range(len(fff)):
-#             fecha.add_event(int(fff.loc[i,'day']), '')
-#             fecha.add_event(int(fff.loc[i,'day']),'  '+str(fff.loc[i,'Monto']))
-#             fecha.add_event(int(fff.loc[i,'day']), '')
-#         fecha.show()
-#
-#         fff2 = des[(des.Repeat == año[1])]
-#         fecha2 = MklCalendar(int(fff2['year'].unique()),int(fff2['mes'].unique()))
-#         p = list(fff2["day"])
-#         l = list(fff2['Monto'])
-#         for j in range(len(fff2)):
-#             fecha2.add_event(int(p[j]),' ')
-#             fecha2.add_event(int(p[j]),'  '+str(l[j]))
-#             fecha2.add_event(int(p[j]),' ')
-#         fecha2.show()
-#     else:
-#         st.write('')
-
-############################################# Fin del Loop #############################################
-
     st.write('')
 
     def highlight_greaterthan(x):
@@ -566,7 +436,7 @@ for i in range(0, len(tb1)):
                 </style>
                 """
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    # st.table(tb1.style.apply(highlight_greaterthan, axis=1))
+    
 #I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I#I
 
     hide_dataframe_row_index = """
@@ -577,8 +447,6 @@ for i in range(0, len(tb1)):
                 """
     st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
     st.dataframe(tb1.style.apply(highlight_greaterthan, axis=1), use_container_width=True)
-
-    # st.dataframe(tb1.assign(hack='').set_index('hack'), use_container_width=True)
 
 
     break
