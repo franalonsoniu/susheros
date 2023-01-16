@@ -45,7 +45,6 @@ cursor.execute("""SELECT *
                WHERE filter_date  >=  CURRENT_DATE - INTERVAL '3 months'
                ORDER BY order_date, commnad_number;""")
 data = cursor.fetchall()
-st.session_state.logs.append("Data fetched successfully.")
 tb = cursor.fetchall()
 tb = pd.DataFrame(tb)
 cursor.close()
@@ -77,3 +76,5 @@ st.subheader('Ingrese su rut: ')
 p1, p2 = st.columns((1,1))
 input_rut = p1.text_input('(sin puntos ni guión, ej. 12345678k)')
 dropdown_mes = p2.selectbox('Seleccione mes a consultar', meses3)
+
+tb
