@@ -24,7 +24,6 @@ button[title="View fullscreen"]{
     visibility: hidden;}
 </style>
 '''
-
 st.markdown(hide_img_fs, unsafe_allow_html=True)
 
 with t3:
@@ -36,7 +35,7 @@ with t3:
                margin: 0;
                font-weight: bold;">
     Producción Susheros 🍱</p>
-    ''', height = 80)
+    ''', height = 100)
 
 ########################################## DataFrame Susheros ############################################
 
