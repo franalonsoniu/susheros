@@ -48,6 +48,7 @@ data = cursor.fetchall()
 tb = cursor.fetchall()
 tb = pd.DataFrame(tb)
 cursor.close()
+tb
 
 tb['mes_correspondiente'] = tb['filter_date'].dt.month
 conditions = [
@@ -77,4 +78,3 @@ p1, p2 = st.columns((1,1))
 input_rut = p1.text_input('(sin puntos ni guión, ej. 12345678k)')
 dropdown_mes = p2.selectbox('Seleccione mes a consultar', meses3)
 
-tb
