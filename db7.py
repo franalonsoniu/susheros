@@ -48,7 +48,7 @@ cur = con.cursor()
 
 cur.execute("""SELECT *
                FROM susheros_app
-               where filter_date in ('2022-11-01','2022-12-01')
+               WHERE filter_date  >=  CURRENT_DATE - INTERVAL '3 months'
                ORDER BY order_date, commnad_number;""")
 
 tb = cur.fetchall()
