@@ -33,7 +33,7 @@ with t3:
                margin: 0;
                font-weight: bold;">
     Producción Susheros 🍱</p>
-    ''', height=100)
+    ''', height=120)
 
 ######################################### RUT e Información Personal #######################################
 
