@@ -431,7 +431,7 @@ if input_rut:
         'command_code','product_name','Fecha Escaneo Comanda','quantity','total_to_pay']]
 
         tb.rename(columns = {'restaurant_name':'Local  ',
-                             'command_number':'Número Cuenta',
+                             'command_number':'Comanda',
                              'command_code':'Código Comanda',
                              'product_name':'Producto',
                              'quantity':'Cantidad de Rolls',
