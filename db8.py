@@ -75,7 +75,7 @@ conditions = [
 values = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
           'Noviembre', 'Diciembre']
 meses3['month'] = np.select(conditions, values)
-meses3 = meses3.sort_values(by=['filter_date'])
+meses3 = meses3.sort_values(by=['filter_date'], ascending=False)
 
 p1, p2 = st.columns((1,1))
 input_rut = p1.text_input('(sin puntos ni guión, ej. 12345678k)')
