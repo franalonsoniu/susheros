@@ -50,6 +50,7 @@ cur = con.cursor()
 cur.execute("""SELECT distinct filter_date
                FROM susheros_app
                WHERE filter_date  >=  CURRENT_DATE - INTERVAL '3 months'
+               order by filter_date desc
                ;""")
 
 meses3 = cur.fetchall()
