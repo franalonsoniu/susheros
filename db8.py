@@ -33,6 +33,17 @@ with t3:
                margin: 0;
                font-weight: bold;">
     Producción Susheros 🍱</p>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPSY1VYLPZ"></script>
+    <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-TPSY1VYLPZ');
+    </script>
+
     ''', height=120)
 
 ######################################### RUT e Información Personal #######################################
